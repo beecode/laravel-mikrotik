@@ -1,0 +1,20 @@
+Mengintegrasikan otentikasi PPPoE dengan Radius Hotspot Mikrotik (melanjutkan pengembangan)
+Aplikasi manajemen PPPoE (baru)
+
+
+
+Monitoring Pengguna Hotspot di 3 titik hotspot: lab, mahasiswa, dosen. (baru) yg aktif, aktivitas illegal (Intrusion Detection System (IDS))
+Pengamanan aktivitas illegal berdasarkan hasil IDS dapat memanfaatkan fitur IP Firewall Filter Mikrotik.
+Rules/Script Mikrotik untuk mengamankan hotspot dari aktivitas netcut, dan serangan lainnya melalui aplikasi dan diterapkan di 3 titik hotspot langsung.
+
+Aplikasi Manajemen Keamanan Hotspot STMIK Bumigora Mataram
+
+
+
+
+
+tcp header
+
+
+Nmap whereshac
+

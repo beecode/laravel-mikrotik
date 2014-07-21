@@ -1,0 +1,20 @@
+1. Extrak file openssl-1.0.0k.zip pada C:\openssl
+2. kemudian buat folder cert
+3  tambahkan environtment variable berikut ini :
+
+User variables
+variable name : OPENSSL_CONF
+variable value : C:/openssl/openssl.cnf
+
+System variable
+variable name : OPENSSL_CONF
+variable value : C:/openssl/openssl.cnf
+
+
+
+
+setelah itu buat ssl sesuai keinginan anda!
+
+masih bingung, super sekali bapaaaakkkk
+
+lihat situs : http://hanadi.wordpress.com/2008/06/27/mikrotik-hotspot-login-with-https/
