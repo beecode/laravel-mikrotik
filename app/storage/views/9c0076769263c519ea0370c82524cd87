@@ -1,0 +1,85 @@
+
+<?php $__env->startSection('content'); ?>
+
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading text-center">Update Filter</div>
+            <div class="panel-body">
+            </div>
+            <form class="form-horizontal" 
+                  method="post" 
+                  action="<?php echo URL ::to('ipaddr/setfilter/'); ?>/<?php echo $ipaddr[0]['.id']; ?>">
+
+                <div class="form-group">
+                    <label for="chain" 
+                           class="col-lg-4 control-label">
+                        Chain
+                    </label>
+                    <div class="col-lg-4">
+                        <input type="text" name="chain" value="<?php echo $ipaddr[0]['chain'] ?>" 
+                               class="form-control input-sm">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="action" 
+                           class="col-lg-4 control-label">
+                        Action</label>
+                    <div class="col-lg-4">
+                        <input type="text" name="action" value="<?php echo $ipaddr[0]['action'] ?>" 
+                               class="form-control input-sm">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="protocol" 
+                           class="col-lg-4 control-label">
+                        Protocol</label>
+                    <div class="col-lg-4">
+                        <input type="text" name="protocol" value="<?php echo $ipaddr[0]['protocol'] ?>"
+                               class="form-control input-sm">
+                    </div>
+                </div>
+
+                
+
+                
+                <div class="form-group">
+                    <label for="disabled" 
+                           class="col-lg-4 control-label">
+                        disabled</label>
+                    <div class="col-lg-4">
+                        <input type="text" name="disabled" value="<?php echo $ipaddr[0]['disabled'] ?>"
+                               class="form-control input-sm">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="comment" 
+                           class="col-lg-4 control-label">
+                        Comment</label>
+                    <div class="col-lg-4">
+                        <input type="text" name="comment" value="<?php echo $ipaddr[0]['comment'] ?>"
+                               class="form-control input-sm">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-lg-offset-4 col-lg-10">
+                        <button type="submit" 
+                                class="btn btn-default">
+                            Save
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.index', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

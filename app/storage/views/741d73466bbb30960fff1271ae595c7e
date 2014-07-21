@@ -1,0 +1,4 @@
+<title><?php echo $__env->yieldContent('title'); ?></title>
+
+<?php echo $__env->make('layout.bootstrapadmin.css', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layout.bootstrapadmin.js', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,18 @@
+
+<?php $__env->startSection('content'); ?>
+<div class="row">
+    <div class="col-md-9 col-md-push-3">
+        <div class="panel panel-default">
+            <div class="panel-heading text-center">
+                IP Firewall Filter
+            </div>
+            <div class="panel-body ">
+
+                <?php print_r($ipaddr); ?>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.index', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

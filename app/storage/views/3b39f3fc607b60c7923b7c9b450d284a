@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <?php echo $__env->make('layout.bootstrapadmin.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    </head>
+    <body>
+        <?php echo $__env->make('layout.bootstrapadmin.nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <div class="container">
+            <?php echo $__env->yieldContent('content'); ?>
+        </div>
+        <?php echo $__env->make('layout.bootstrapadmin.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    </body>
+</html>

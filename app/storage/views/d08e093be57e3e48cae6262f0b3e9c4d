@@ -1,0 +1,36 @@
+
+<?php $__env->startSection('content'); ?>
+
+        <div class="panel panel-default">
+            <div class="panel-heading text-center">
+                IP Firewall Filter
+            </div>
+            
+
+                <table class='table table-striped table-hover table-bordered text-center'>
+
+                <tbody>
+
+                    <?php foreach($ipaddr as $ip): ?>
+
+                    <?php echo Form::open(array('url' => 'ipaddr/' , 'class' => 'pull-right')); ?>
+                <pre> .id               = <?php echo $ip['.id']; ?></pre>
+                <pre> Address           = <?php echo $ip['chain']; ?></pre>
+                <pre> Network           = <?php echo $ip['action']; ?></pre>
+                <pre> Interface         = <?php echo $ip['protocol']; ?></pre>
+                <pre> Invalid           = <?php echo $ip['invalid']; ?></pre>
+                <pre> Dynamic           = <?php echo $ip['dynamic']; ?></pre>
+                <pre> Disable           = <?php echo $ip['disabled']; ?></pre>
+                <pre> Comment          = <?php echo $ip['comment']; ?></pre>
+
+
+                <?php $__env->stopSection(); ?>
+                <?php echo Form::close(); ?>
+                <?php endforeach; ?>
+                
+      
+        </div>
+    </div>
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.index', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

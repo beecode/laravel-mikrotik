@@ -1,0 +1,102 @@
+
+<?php $__env->startSection('content'); ?>
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading text-center">Add New firewall</div>
+            <div class="panel-body">
+
+            </div>
+            <form class="form-horizontal" 
+                  method="post" 
+                  action="<?php echo URL::to('ipaddr/addfilter'); ?>">
+
+                <div class="form-group">
+                    <label for="chain" 
+                           class="col-lg-4 control-label">
+                        chain</label>
+                    <div class="col-lg-4">
+                        <input type="text" name="chain" 
+                               class="form-control input-sm">
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="action" 
+                           class="col-lg-4 control-label">
+                        Action</label>
+                    <div class="col-lg-4">
+                        <input type="text" name="action" 
+                               class="form-control input-sm">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="protocol" 
+                           class="col-lg-4 control-label">
+                        Protocol</label>
+                    <div class="col-lg-4">
+                        <input type="text" name="protocol"
+                               class="form-control input-sm">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address-list" 
+                           class="col-lg-4 control-label">
+                        Address List</label>
+                    <div class="col-lg-4">
+                        <input type="text" name="address-list" 
+                               class="form-control input-sm">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address-list-timeout" 
+                           class="col-lg-4 control-label">
+                        Address List Timeout</label>
+                    <div class="col-lg-4">
+                        <input type="text" name="address-list-timeout" 
+                               class="form-control input-sm">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="disabled" 
+                           class="col-lg-4 control-label">
+                        Disable</label>
+                    <div class="col-lg-4">
+                        <input type="text" name="disabled" 
+                               class="form-control input-sm">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="comment" 
+                           class="col-lg-4 control-label">
+                        Comment</label>
+                    <div class="col-lg-4">
+                        <input type="text" name="comment" 
+                               class="form-control input-sm">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-lg-offset-4 col-lg-10">
+                        <button type="submit" 
+                                class="btn btn-default">
+                            Save
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.index', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

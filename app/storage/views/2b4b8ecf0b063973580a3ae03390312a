@@ -1,0 +1,28 @@
+
+<?php $__env->startSection('content'); ?>
+<div class="col-md-5">    
+    <?php echo Form::open(array('url' => '/form/add','method' =>'POST')); ?>
+
+    <div class="form-group">
+        <?php echo Form::label('username', 'Username'); ?>
+        <?php echo Form::text('Home[user]',null,['class'=>'form-control']); ?>
+    </div>
+
+    <div class="form-group">
+        <?php echo Form::label('email', 'Email Address'); ?>
+        <?php echo Form::text('Home[email]',null,['class'=>'form-control','placeholder'=>'youremail@domain.com']); ?> 
+    </div>
+
+    
+    <?php echo Form::submit('TEKAN SAYA',['class'=>'btn btn-warning btn-sm']);; ?>                  
+    
+    <?php echo Form::close(); ?>
+
+    <?php if(isset($data)): ?>
+    <?php foreach ($data as $user): ?>
+    <?php echo $user; ?>
+    <?php endforeach; ?>
+    <?php endif; ?>
+</div>
+<?php $__env->stopSection(); ?>()
+<?php echo $__env->make('layout.index', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?> 

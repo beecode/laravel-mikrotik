@@ -1,0 +1,41 @@
+
+<!--<?php $__env->startSection('content'); ?>
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+           Sadam Husen
+        </div>
+    </div>
+    ini adalah (at)yield('content')
+</div-->
+
+<!--@extends('layout')-->
+
+<?php $__env->startSection('content'); ?>
+
+<section class="container">
+ <table class="table">
+    <tr>
+       <th>Address</th>
+       <th>Network</th>
+       <th>Interface</th>
+       <th>Actual-Interface</th>
+       <th>Invalid</th>
+       <th>Dynamic</th>
+       <th>Action</th>
+    </tr>
+    <?php foreach($ipaddr as $ip): ?>
+      <tr>
+         <td><?php echo $ip['address']; ?></td>
+         <td><?php echo $ip['network']; ?></td>
+         <td><?php echo $ip['interface']; ?></td>
+         <td><?php echo $ip['actual-interface']; ?></td>
+         <td><?php echo $ip['invalid']; ?></td>
+         <td><?php echo $ip['dynamic']; ?></td>
+
+      </tr>
+    <?php endforeach; ?>
+ </table>
+</section>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.index', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

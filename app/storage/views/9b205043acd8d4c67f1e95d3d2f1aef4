@@ -1,0 +1,68 @@
+<?php $__env->startSection('content'); ?>
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <?php if (Session::has('message')): ?>
+            <div class="alert alert-warning alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <?php echo Session::get('message'); ?>
+            </div>
+            <?php endif; ?>
+            <h1 class="page-header">Hotspot Aktive</h1>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="glyphicon glyphicon-list-alt">
+                        <strong>Hotspot Aktive</strong>
+                    </i>
+                </div>
+                <div class="panel-body ">
+
+                    <?php print_r($ipaddr); ?>
+
+                    <table class='table table-striped table-hover table-bordered text-center text-center'>
+                        <thead>
+                            <tr>
+                                <th class="text-center">Id</th>
+                                <th class="text-center">Server</th>
+                                <th class="text-center">User</th>
+                                <th class="text-center">Address</th>
+                                <th class="text-center">Mac Address</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach($ipaddr as $ip): ?>
+                            <tr>
+                                <?php echo Form::open(array('url' => 'ipaddr/' , 'class' => 'pull-right')); ?>
+                                <td><?php echo $ip['.id']; ?></td>
+                                <td><?php echo $ip['server']; ?></td>
+                                <td><?php echo $ip['user']; ?></td>
+                                <td><?php echo $ip['address']; ?></td>
+                                <td><?php echo $ip['mac-address']; ?></td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a href="<?php echo URL ::to('active/deleteavtive/'); ?>/<?php echo $ip['.id']; ?>"
+                                           <a class="btn btn-sm btn-danger" title="Delete">
+                                                <span class="glyphicon glyphicon-trash"></span>
+                                            </a>
+
+                                            <a href="<?php echo URL::to('active/detailactive/'); ?>/<?php echo $ip['.id']; ?>"
+                                               <a class="btn btn-sm btn-info" title="Detail">
+                                                    <span class="glyphicon glyphicon-asterisk"></span>
+                                                </a>
+
+                                                <?php echo Form::close(); ?>
+                                                </td>
+                                                </tr>
+                                                <?php endforeach; ?>
+                                                </tbody>
+                                                </table>
+
+                                                </div>
+                                                </div>
+                                                </div>
+                                                </div>
+                                                </div>
+                                                <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.bootstrapadmin.index', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
