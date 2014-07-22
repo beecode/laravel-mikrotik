@@ -8,6 +8,8 @@ use MikrotikAPI\Entity\Auth;
 use MikrotikAPI\Commands\IP\Address;
 use MikrotikAPI\Commands\IP\Firewall\FirewallAddressList;
 use MikrotikAPI\Util\DebugDumper;
+use App\Mikrotik\AddressList;
+use App\Models\Mikrotik;
 
 class AddressList extends AdminController {
 
@@ -26,6 +28,13 @@ class AddressList extends AdminController {
     }
 
     public function add() {
+        $param = Input::all();
+        $mikrotik = Mikrotik::where();
+        $al = new AddressList();
+        $al->add($mikrotik, $param);
+    }
+
+    public function delete() {
         $connect = new Auth();
         $connect->setHost("172.18.1.254");
         $connect->setUsername("admin");
@@ -35,16 +44,12 @@ class AddressList extends AdminController {
         $talker = new Talker($connect);
 
         $id = new FirewallAddressList($talker);
-        $param = [
-            'address' => '192.168.1.2',
-            'comment' =>'berhasil',
-            'list'=>'mikro'
-        ];
-        DebugDumper::dump($id->add($param));
+        $start = $id->delete('*AF');
+        DebugDumper::dump($start);
     }
 
-    public function delete(){
-      $connect = new Auth();
+    public function disable() {
+        $connect = new Auth();
         $connect->setHost("172.18.1.254");
         $connect->setUsername("admin");
         $connect->setPassword("1261");
@@ -53,11 +58,12 @@ class AddressList extends AdminController {
         $talker = new Talker($connect);
 
         $id = new FirewallAddressList($talker);
-        $start=$id->delete('*AF');
+        $start = $id->disable('*AD');
         DebugDumper::dump($start);
     }
-    public function disable(){
-      $connect = new Auth();
+
+    public function enable() {
+        $connect = new Auth();
         $connect->setHost("172.18.1.254");
         $connect->setUsername("admin");
         $connect->setPassword("1261");
@@ -66,11 +72,12 @@ class AddressList extends AdminController {
         $talker = new Talker($connect);
 
         $id = new FirewallAddressList($talker);
-        $start=$id->disable('*AD');
+        $start = $id->enable('*AD');
         DebugDumper::dump($start);
     }
-    public function enable(){
-      $connect = new Auth();
+
+    public function detail() {
+        $connect = new Auth();
         $connect->setHost("172.18.1.254");
         $connect->setUsername("admin");
         $connect->setPassword("1261");
@@ -79,24 +86,12 @@ class AddressList extends AdminController {
         $talker = new Talker($connect);
 
         $id = new FirewallAddressList($talker);
-        $start=$id->enable('*AD');
+        $start = $id->detail('*AD');
         DebugDumper::dump($start);
     }
-    public function detail(){
-      $connect = new Auth();
-        $connect->setHost("172.18.1.254");
-        $connect->setUsername("admin");
-        $connect->setPassword("1261");
-        $connect->setDebug(true);
 
-        $talker = new Talker($connect);
-
-        $id = new FirewallAddressList($talker);
-        $start=$id->detail('*AD');
-        DebugDumper::dump($start);
-    }
-    public function set(){
-      $connect = new Auth();
+    public function set() {
+        $connect = new Auth();
         $connect->setHost("172.18.1.254");
         $connect->setUsername("admin");
         $connect->setPassword("1261");
@@ -107,6 +102,7 @@ class AddressList extends AdminController {
         $id = new FirewallAddressList($talker);
         DebugDumper::dump($id->set($param, $id));
     }
+
 }
 ?>
 
