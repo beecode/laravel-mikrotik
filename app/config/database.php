@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'monitoringdb',
 			'username'  => 'root',
-			'password'  => 'a',
+			'password'  => '1261',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
